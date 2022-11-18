@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Atv02
 {
@@ -16,6 +17,10 @@ namespace Atv02
             this.usuario = usuario;
             this.password = password;
             this.banco = banco;
+        }
+
+        public Usuario()
+        {
         }
 
         public void executarTransacao(SqlCommand comando, SqlTransaction transacao)
@@ -140,5 +145,40 @@ namespace Atv02
             }
 
         }
+
+        public bool permissoes(string permissao, string tabela, string usuario)
+        {
+            Banco bd = new Banco();
+            bd.Db = banco;
+            SqlConnection cn = bd.abrirConexao();
+            SqlTransaction transacao = cn.BeginTransaction();
+
+            SqlCommand comando = new SqlCommand();
+
+            comando.Connection = cn;
+            comando.Transaction = transacao;
+            comando.CommandType = CommandType.Text;
+
+            comando.CommandText = permissao + " select on " + tabela + " to " + usuario;
+            try
+            {
+                comando.ExecuteNonQuery();
+                transacao.Commit();
+                MessageBox.Show("Permissão concedida ao usuário");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                transacao.Rollback();
+                MessageBox.Show("Erro ao conceder permissão ao usuário");
+                return false;
+            }
+            finally
+            {
+                bd.fecharConexao();
+            }
+
+        }
+
     }
 }

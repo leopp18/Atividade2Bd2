@@ -33,3 +33,14 @@ C:\Users\XicueXuxi\Desktop\Repositorios\Atividade2BD2\Atv02\Atv02\obj\Debug\Atv0
 C:\Users\XicueXuxi\Desktop\Repositorios\Atividade2BD2\Atv02\Atv02\obj\Debug\Atv02.csproj.CoreCompileInputs.cache
 C:\Users\XicueXuxi\Desktop\Repositorios\Atividade2BD2\Atv02\Atv02\obj\Debug\Atv02.exe
 C:\Users\XicueXuxi\Desktop\Repositorios\Atividade2BD2\Atv02\Atv02\obj\Debug\Atv02.pdb
+C:\Users\laboratorio\Desktop\Atividade2Bd2\Atv02\Atv02\bin\Debug\Atv02.exe.config
+C:\Users\laboratorio\Desktop\Atividade2Bd2\Atv02\Atv02\bin\Debug\Atv02.exe
+C:\Users\laboratorio\Desktop\Atividade2Bd2\Atv02\Atv02\bin\Debug\Atv02.pdb
+C:\Users\laboratorio\Desktop\Atividade2Bd2\Atv02\Atv02\obj\Debug\Atv02.csproj.AssemblyReference.cache
+C:\Users\laboratorio\Desktop\Atividade2Bd2\Atv02\Atv02\obj\Debug\Atv02.csproj.SuggestedBindingRedirects.cache
+C:\Users\laboratorio\Desktop\Atividade2Bd2\Atv02\Atv02\obj\Debug\Atv02.Form1.resources
+C:\Users\laboratorio\Desktop\Atividade2Bd2\Atv02\Atv02\obj\Debug\Atv02.Properties.Resources.resources
+C:\Users\laboratorio\Desktop\Atividade2Bd2\Atv02\Atv02\obj\Debug\Atv02.csproj.GenerateResource.cache
+C:\Users\laboratorio\Desktop\Atividade2Bd2\Atv02\Atv02\obj\Debug\Atv02.csproj.CoreCompileInputs.cache
+C:\Users\laboratorio\Desktop\Atividade2Bd2\Atv02\Atv02\obj\Debug\Atv02.exe
+C:\Users\laboratorio\Desktop\Atividade2Bd2\Atv02\Atv02\obj\Debug\Atv02.pdb

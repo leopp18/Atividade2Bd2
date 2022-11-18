@@ -44,65 +44,6 @@ namespace Atv02
                 return false;
             }
 
-            //Banco bd = new Banco();
-            //bd.Db = banco;
-            ////Console.WriteLine(banco + " Printando Banco");
-            //SqlConnection cn;
-
-            //SqlTransaction transacao = cn.BeginTransaction();
-            //SqlCommand comando1 = new SqlCommand();
-            //SqlCommand comando2 = new SqlCommand();
-            //SqlCommand comando3 = new SqlCommand();
-
-            //comando1.Connection = cn;
-            //comando1.Transaction = transacao;
-            //comando1.CommandType = CommandType.Text;
-
-            //comando2.Connection = cn;
-            //comando2.Transaction = transacao;
-            //comando2.CommandType = CommandType.Text;
-
-            //comando3.Connection = cn;
-            //comando3.Transaction = transacao;
-            //comando3.CommandType = CommandType.Text;
-
-            //Message
-            //try
-            //{
-
-            //    //comando1.CommandText = "create login @usuario with password= @password;";
-            //    //comando1.Parameters.Add("@usuario", SqlDbType.VarChar);
-            //    //comando1.Parameters.Add("@password", SqlDbType.VarChar);
-            //    //comando1.Parameters[0].Value = usuario;
-            //    //comando1.Parameters[1].Value = password;
-                
-                
-                
-            //    //comando2.Parameters.Add("@usuario", SqlDbType.VarChar);
-            //    //comando2.Parameters.Add("@usuario2", SqlDbType.VarChar);
-            //    //comando2.Parameters[0].Value = usuario;
-            //    //comando2.Parameters[1].Value = usuario;
-
-            //    Console.WriteLine("Antes do comando 2 com " + usuario);
-            //    executarTransacao(comando2, transacao);
-            //    Console.WriteLine("Depois do comando 2");
-
-            //    comando3.CommandText = "exec sp_addrolemember 'DB_DATAREADER', '" + usuario + "';" + "exec sp_addrolemember 'DB_DATAWRITER', '" + usuario + "';";
-            //    //comando3.Parameters.Add("@usuario", SqlDbType.VarChar);
-            //    //comando3.Parameters[0].Value = usuario;
-            //    executarTransacao(comando3, transacao);
-            //    return true;
-            //}
-            //catch
-            //{
-            //    return false;
-            //}
-            //finally
-            //{
-            //    bd.fecharConexao();
-            //}
-
-
         }
         public bool primeiroComando()
         {

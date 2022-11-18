@@ -20,10 +20,10 @@ namespace Atv02
         private void btnEnviar_Click(object sender, EventArgs e)
         {
             Banco banco = new Banco();
+            //MessageBox.Show("Login: " + txtLogin.Text + " e Senha: " + txtSenha.Text + ";");
             if(banco.User == txtLogin.Text && banco.Password == txtSenha.Text)
             {
-                dataGridView1.DataSource = banco.executaConsulta("select database_id, name, create_date from sys.databases where database_id > 4;");
-                //dataGridView1.DataSource = banco.executaConsulta("select * from teste");
+                dataGridView_BDs.DataSource = banco.executaConsulta("select database_id, name, create_date from sys.databases where database_id > 4;");
                 btnUsuario.Enabled = true;
                 txtLoginUsuario.ReadOnly = false;
                 txtSenhaUsuario.ReadOnly = false;
@@ -37,15 +37,15 @@ namespace Atv02
         private void btnListarTabelas_Click(object sender, EventArgs e)
         {
             Banco banco = new Banco();
-            banco.Db = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            //MessageBox.Show(banco.Db);
-            dataGridView2.DataSource = banco.executaConsulta("select table_catalog, table_schema, table_name, table_type from information_schema.tables;");
+            banco.Db = dataGridView_BDs.CurrentRow.Cells[1].Value.ToString();
+            MessageBox.Show(banco.Db);
+            dataGridView_Usuarios.DataSource = banco.executaConsulta("select table_catalog, table_schema, table_name, table_type from information_schema.tables;");
             //LEMBRAR DE DAR PERMISSÃO AO USUARIO NO SQLSERVER PARA CADA BANCO DE DADOS
         }
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            Usuario u = new Usuario(txtLoginUsuario.Text, txtSenhaUsuario.Text, dataGridView1.CurrentRow.Cells[1].Value.ToString());
+            Usuario u = new Usuario(txtLoginUsuario.Text, txtSenhaUsuario.Text, dataGridView_BDs.CurrentRow.Cells[1].Value.ToString());
             //bool aux = u.gravarUsuario();
             if (u.gravarUsuario())
             {
@@ -55,6 +55,16 @@ namespace Atv02
             {
                 MessageBox.Show("Deu xabu");
             }
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

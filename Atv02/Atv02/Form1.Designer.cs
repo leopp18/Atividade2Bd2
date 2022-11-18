@@ -1,4 +1,6 @@
-﻿namespace Atv02
+﻿using System;
+
+namespace Atv02
 {
     partial class Form1
     {
@@ -28,49 +30,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lable_login = new System.Windows.Forms.Label();
+            this.label_senha = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_BDs = new System.Windows.Forms.DataGridView();
             this.btnListarTabelas = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_Usuarios = new System.Windows.Forms.DataGridView();
             this.txtSenhaUsuario = new System.Windows.Forms.TextBox();
             this.txtLoginUsuario = new System.Windows.Forms.TextBox();
             this.btnUsuario = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.label_senhaNovoUsuario = new System.Windows.Forms.Label();
+            this.label_tituloNovoUsuario = new System.Windows.Forms.Label();
+            this.panel_Login = new System.Windows.Forms.Panel();
+            this.panel_novoUsuario = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label_titulo = new System.Windows.Forms.Label();
+            this.label_loginNovoUsuario = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_BDs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Usuarios)).BeginInit();
+            this.panel_Login.SuspendLayout();
+            this.panel_novoUsuario.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lable_login
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(96, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Login:";
+            this.lable_login.AutoSize = true;
+            this.lable_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lable_login.Location = new System.Drawing.Point(23, 24);
+            this.lable_login.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lable_login.Name = "lable_login";
+            this.lable_login.Size = new System.Drawing.Size(66, 25);
+            this.lable_login.TabIndex = 0;
+            this.lable_login.Text = "Login:";
             // 
-            // label2
+            // label_senha
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(96, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Senha:";
+            this.label_senha.AutoSize = true;
+            this.label_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_senha.Location = new System.Drawing.Point(23, 118);
+            this.label_senha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_senha.Name = "label_senha";
+            this.label_senha.Size = new System.Drawing.Size(76, 25);
+            this.label_senha.TabIndex = 1;
+            this.label_senha.Text = "Senha:";
             // 
             // btnEnviar
             // 
             this.btnEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviar.Location = new System.Drawing.Point(147, 253);
+            this.btnEnviar.Location = new System.Drawing.Point(76, 220);
+            this.btnEnviar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(97, 37);
+            this.btnEnviar.Size = new System.Drawing.Size(153, 46);
             this.btnEnviar.TabIndex = 2;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = true;
@@ -79,117 +94,215 @@
             // txtLogin
             // 
             this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogin.Location = new System.Drawing.Point(99, 65);
+            this.txtLogin.Location = new System.Drawing.Point(28, 53);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(194, 26);
+            this.txtLogin.Size = new System.Drawing.Size(257, 30);
             this.txtLogin.TabIndex = 3;
+            this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(99, 141);
+            this.txtSenha.Location = new System.Drawing.Point(28, 147);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(194, 26);
+            this.txtSenha.Size = new System.Drawing.Size(257, 30);
             this.txtSenha.TabIndex = 4;
             // 
-            // dataGridView1
+            // dataGridView_BDs
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(463, 46);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(346, 174);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridView_BDs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_BDs.Location = new System.Drawing.Point(420, 132);
+            this.dataGridView_BDs.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView_BDs.Name = "dataGridView_BDs";
+            this.dataGridView_BDs.RowHeadersWidth = 51;
+            this.dataGridView_BDs.Size = new System.Drawing.Size(461, 181);
+            this.dataGridView_BDs.TabIndex = 5;
             // 
             // btnListarTabelas
             // 
-            this.btnListarTabelas.Location = new System.Drawing.Point(596, 253);
+            this.btnListarTabelas.Location = new System.Drawing.Point(716, 321);
+            this.btnListarTabelas.Margin = new System.Windows.Forms.Padding(4);
             this.btnListarTabelas.Name = "btnListarTabelas";
-            this.btnListarTabelas.Size = new System.Drawing.Size(83, 23);
+            this.btnListarTabelas.Size = new System.Drawing.Size(165, 28);
             this.btnListarTabelas.TabIndex = 6;
             this.btnListarTabelas.Text = "Listar tabelas";
             this.btnListarTabelas.UseVisualStyleBackColor = true;
             this.btnListarTabelas.Click += new System.EventHandler(this.btnListarTabelas_Click);
             // 
-            // dataGridView2
+            // dataGridView_Usuarios
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(463, 306);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(346, 150);
-            this.dataGridView2.TabIndex = 7;
+            this.dataGridView_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Usuarios.Location = new System.Drawing.Point(420, 377);
+            this.dataGridView_Usuarios.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView_Usuarios.Name = "dataGridView_Usuarios";
+            this.dataGridView_Usuarios.RowHeadersWidth = 51;
+            this.dataGridView_Usuarios.Size = new System.Drawing.Size(461, 303);
+            this.dataGridView_Usuarios.TabIndex = 7;
             // 
             // txtSenhaUsuario
             // 
             this.txtSenhaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenhaUsuario.Location = new System.Drawing.Point(947, 141);
+            this.txtSenhaUsuario.Location = new System.Drawing.Point(45, 199);
+            this.txtSenhaUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenhaUsuario.Name = "txtSenhaUsuario";
             this.txtSenhaUsuario.ReadOnly = true;
-            this.txtSenhaUsuario.Size = new System.Drawing.Size(194, 26);
+            this.txtSenhaUsuario.Size = new System.Drawing.Size(257, 30);
             this.txtSenhaUsuario.TabIndex = 12;
             // 
             // txtLoginUsuario
             // 
             this.txtLoginUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoginUsuario.Location = new System.Drawing.Point(947, 65);
+            this.txtLoginUsuario.Location = new System.Drawing.Point(45, 105);
+            this.txtLoginUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtLoginUsuario.Name = "txtLoginUsuario";
             this.txtLoginUsuario.ReadOnly = true;
-            this.txtLoginUsuario.Size = new System.Drawing.Size(194, 26);
+            this.txtLoginUsuario.Size = new System.Drawing.Size(257, 30);
             this.txtLoginUsuario.TabIndex = 11;
             // 
             // btnUsuario
             // 
             this.btnUsuario.Enabled = false;
             this.btnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuario.Location = new System.Drawing.Point(998, 239);
+            this.btnUsuario.Location = new System.Drawing.Point(94, 270);
+            this.btnUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(97, 37);
+            this.btnUsuario.Size = new System.Drawing.Size(157, 46);
             this.btnUsuario.TabIndex = 10;
             this.btnUsuario.Text = "Gravar";
             this.btnUsuario.UseVisualStyleBackColor = true;
             this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
-            // label3
+            // label_senhaNovoUsuario
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(944, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 20);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Senha:";
+            this.label_senhaNovoUsuario.AutoSize = true;
+            this.label_senhaNovoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_senhaNovoUsuario.Location = new System.Drawing.Point(41, 170);
+            this.label_senhaNovoUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_senhaNovoUsuario.Name = "label_senhaNovoUsuario";
+            this.label_senhaNovoUsuario.Size = new System.Drawing.Size(76, 25);
+            this.label_senhaNovoUsuario.TabIndex = 9;
+            this.label_senhaNovoUsuario.Text = "Senha:";
             // 
-            // label4
+            // label_tituloNovoUsuario
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(944, 35);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 20);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Login:";
+            this.label_tituloNovoUsuario.AutoSize = true;
+            this.label_tituloNovoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tituloNovoUsuario.Location = new System.Drawing.Point(107, 13);
+            this.label_tituloNovoUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_tituloNovoUsuario.Name = "label_tituloNovoUsuario";
+            this.label_tituloNovoUsuario.Size = new System.Drawing.Size(130, 25);
+            this.label_tituloNovoUsuario.TabIndex = 14;
+            this.label_tituloNovoUsuario.Text = "Novo Usuário";
+            // 
+            // panel_Login
+            // 
+            this.panel_Login.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Login.Controls.Add(this.txtLogin);
+            this.panel_Login.Controls.Add(this.label_senha);
+            this.panel_Login.Controls.Add(this.btnEnviar);
+            this.panel_Login.Controls.Add(this.txtSenha);
+            this.panel_Login.Controls.Add(this.lable_login);
+            this.panel_Login.Location = new System.Drawing.Point(36, 132);
+            this.panel_Login.Name = "panel_Login";
+            this.panel_Login.Size = new System.Drawing.Size(319, 282);
+            this.panel_Login.TabIndex = 15;
+            // 
+            // panel_novoUsuario
+            // 
+            this.panel_novoUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_novoUsuario.Controls.Add(this.label_loginNovoUsuario);
+            this.panel_novoUsuario.Controls.Add(this.label_tituloNovoUsuario);
+            this.panel_novoUsuario.Controls.Add(this.label_senhaNovoUsuario);
+            this.panel_novoUsuario.Controls.Add(this.btnUsuario);
+            this.panel_novoUsuario.Controls.Add(this.txtSenhaUsuario);
+            this.panel_novoUsuario.Controls.Add(this.txtLoginUsuario);
+            this.panel_novoUsuario.Location = new System.Drawing.Point(949, 132);
+            this.panel_novoUsuario.Name = "panel_novoUsuario";
+            this.panel_novoUsuario.Size = new System.Drawing.Size(341, 337);
+            this.panel_novoUsuario.TabIndex = 16;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.checkedListBox1);
+            this.panel3.Location = new System.Drawing.Point(950, 487);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(340, 193);
+            this.panel3.TabIndex = 17;
+            // 
+            // label_titulo
+            // 
+            this.label_titulo.AutoSize = true;
+            this.label_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_titulo.Location = new System.Drawing.Point(416, 37);
+            this.label_titulo.Name = "label_titulo";
+            this.label_titulo.Size = new System.Drawing.Size(465, 39);
+            this.label_titulo.TabIndex = 18;
+            this.label_titulo.Text = "Sistema Gerenciador de DB";
+            // 
+            // label_loginNovoUsuario
+            // 
+            this.label_loginNovoUsuario.AutoSize = true;
+            this.label_loginNovoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_loginNovoUsuario.Location = new System.Drawing.Point(40, 76);
+            this.label_loginNovoUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_loginNovoUsuario.Name = "label_loginNovoUsuario";
+            this.label_loginNovoUsuario.Size = new System.Drawing.Size(66, 25);
+            this.label_loginNovoUsuario.TabIndex = 5;
+            this.label_loginNovoUsuario.Text = "Login:";
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.Enabled = false;
+            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Grant",
+            "Deny",
+            "Revoke"});
+            this.checkedListBox1.Location = new System.Drawing.Point(34, 25);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(268, 79);
+            this.checkedListBox1.TabIndex = 0;
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(93, 127);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(157, 46);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Gravar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1306, 545);
-            this.Controls.Add(this.txtSenhaUsuario);
-            this.Controls.Add(this.txtLoginUsuario);
-            this.Controls.Add(this.btnUsuario);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.dataGridView2);
+            this.ClientSize = new System.Drawing.Size(1323, 775);
+            this.Controls.Add(this.label_titulo);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel_novoUsuario);
+            this.Controls.Add(this.panel_Login);
+            this.Controls.Add(this.dataGridView_Usuarios);
             this.Controls.Add(this.btnListarTabelas);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.txtLogin);
-            this.Controls.Add(this.btnEnviar);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView_BDs);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_BDs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Usuarios)).EndInit();
+            this.panel_Login.ResumeLayout(false);
+            this.panel_Login.PerformLayout();
+            this.panel_novoUsuario.ResumeLayout(false);
+            this.panel_novoUsuario.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,19 +310,26 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lable_login;
+        private System.Windows.Forms.Label label_senha;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_BDs;
         private System.Windows.Forms.Button btnListarTabelas;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView_Usuarios;
         private System.Windows.Forms.TextBox txtSenhaUsuario;
         private System.Windows.Forms.TextBox txtLoginUsuario;
         private System.Windows.Forms.Button btnUsuario;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label_senhaNovoUsuario;
+        private System.Windows.Forms.Label label_tituloNovoUsuario;
+        private System.Windows.Forms.Panel panel_Login;
+        private System.Windows.Forms.Panel panel_novoUsuario;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label_loginNovoUsuario;
+        private System.Windows.Forms.Label label_titulo;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

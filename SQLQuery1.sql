@@ -1,6 +1,4 @@
-create database gremio;
-
-select * from teste2
+create database aula2;
 
 create table teste2
 (
@@ -16,10 +14,10 @@ create table pessoas2
 	altura integer
 )
 
-create login usuario2 with password='senha1234';
-create user usuario2 from login usuario2;
-exec sp_addrolemember 'DB_DATAREADER', 'usuario2';
-exec sp_addrolemember 'DB_DATAWRITER', 'usuario2';
+create login usuario with password='senha1234';
+create user usuario from login usuario;
+exec sp_addrolemember 'DB_DATAREADER', 'usuario';
+exec sp_addrolemember 'DB_DATAWRITER', 'usuario';
 
 select database_id, name, create_date from sys.databases where database_id > 4;
 

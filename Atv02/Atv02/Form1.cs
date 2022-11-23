@@ -20,16 +20,18 @@ namespace Atv02
         public void consultarUsuarios()
         {
             Banco banco = new Banco();
-            dataGridView_Usuarios.DataSource = banco.executaConsulta("select principal_id, name, create_date from sys.sql_logins where name not like '#%' and principal_id >1;");
+            string db = dataGridView_BDs.CurrentRow.Cells[1].Value.ToString();
+            dataGridView_Usuarios.DataSource = banco.executaConsulta("use " + db + ";SELECT distinct p.name FROM sys.database_role_members roles JOIN sys.database_principals" +
+                " p ON roles.member_principal_id = p.principal_id JOIN sys.database_principals pp ON roles.role_principal_id = pp.principal_id ORDER BY 1; ");
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
             Banco banco = new Banco();
+            banco.DataSource = txtServidor.Text;
             if(banco.User == txtLogin.Text && banco.Password == txtSenha.Text)
             {
                 dataGridView_BDs.DataSource = banco.executaConsulta("select database_id, name, create_date from sys.databases where database_id > 4;");
-                consultarUsuarios();
                 btnUsuario.Enabled = true;
                 txtLoginUsuario.ReadOnly = false;
                 txtSenhaUsuario.ReadOnly = false;
@@ -80,6 +82,7 @@ namespace Atv02
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string banco = dataGridView_BDs.CurrentRow.Cells[1].Value.ToString();
             string tabela = dataGridView_Tabelas.CurrentRow.Cells[2].Value.ToString();
             string usuario = dataGridView_Usuarios.CurrentRow.Cells[1].Value.ToString();
             string permissao;
@@ -88,17 +91,17 @@ namespace Atv02
             if (radioButton1.Checked)
             {
                 permissao = "grant";
-                u.permissoes(permissao, tabela, usuario);
+                u.permissoes(banco, permissao, tabela, usuario);
             }
             else if (radioButton2.Checked)
             {
                 permissao = "deny";
-                u.permissoes(permissao, tabela, usuario);
+                u.permissoes(banco, permissao, tabela, usuario);
             }
             else if (radioButton3.Checked)
             {
                 permissao = "revoke";
-                u.permissoes(permissao, tabela, usuario);
+                u.permissoes(banco, permissao, tabela, usuario);
             }
         }
 
@@ -110,6 +113,21 @@ namespace Atv02
             radioButton2.Enabled = true;
             radioButton3.Enabled = true;
             buttonGravarPermissoes.Enabled = true;
+        }
+
+        private void dataGridView_BDs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lable_login_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView_BDs_MouseClick(object sender, MouseEventArgs e)
+        {
+            consultarUsuarios();
         }
     }
 }

@@ -146,7 +146,7 @@ namespace Atv02
 
         }
 
-        public bool permissoes(string permissao, string tabela, string usuario)
+        public bool permissoes(string banco, string permissao, string tabela, string usuario)
         {
             Banco bd = new Banco();
             bd.Db = banco;
@@ -159,18 +159,18 @@ namespace Atv02
             comando.Transaction = transacao;
             comando.CommandType = CommandType.Text;
 
-            comando.CommandText = permissao + " select on " + tabela + " to " + usuario;
+            comando.CommandText = "use " + banco + "; " + permissao + " select on " + tabela + " to " + usuario + ";";
             try
             {
                 comando.ExecuteNonQuery();
                 transacao.Commit();
-                MessageBox.Show("Permissão concedida ao usuário");
+                MessageBox.Show("Deu CERTO a permissao!");
                 return true;
             }
             catch (Exception ex)
             {
                 transacao.Rollback();
-                MessageBox.Show("Erro ao conceder permissão ao usuário");
+                MessageBox.Show("Deu ERRADO a permissao!");
                 return false;
             }
             finally

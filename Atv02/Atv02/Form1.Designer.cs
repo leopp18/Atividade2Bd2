@@ -47,58 +47,61 @@ namespace Atv02
             this.panel_novoUsuario = new System.Windows.Forms.Panel();
             this.label_loginNovoUsuario = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.buttonGravarPermissoes = new System.Windows.Forms.Button();
             this.label_titulo = new System.Windows.Forms.Label();
             this.dataGridView_Usuarios = new System.Windows.Forms.DataGridView();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.buttonSelecionarUsuario = new System.Windows.Forms.Button();
+            this.txtServidor = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_BDs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tabelas)).BeginInit();
             this.panel_Login.SuspendLayout();
             this.panel_novoUsuario.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Usuarios)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Usuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // lable_login
             // 
             this.lable_login.AutoSize = true;
             this.lable_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lable_login.Location = new System.Drawing.Point(17, 20);
+            this.lable_login.Location = new System.Drawing.Point(15, 67);
             this.lable_login.Name = "lable_login";
-            this.lable_login.Size = new System.Drawing.Size(52, 20);
+            this.lable_login.Size = new System.Drawing.Size(105, 20);
             this.lable_login.TabIndex = 0;
-            this.lable_login.Text = "Login:";
+            this.lable_login.Text = "Login Master:";
+            this.lable_login.Click += new System.EventHandler(this.lable_login_Click);
             // 
             // label_senha
             // 
             this.label_senha.AutoSize = true;
             this.label_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_senha.Location = new System.Drawing.Point(17, 96);
+            this.label_senha.Location = new System.Drawing.Point(15, 143);
             this.label_senha.Name = "label_senha";
-            this.label_senha.Size = new System.Drawing.Size(60, 20);
+            this.label_senha.Size = new System.Drawing.Size(113, 20);
             this.label_senha.TabIndex = 1;
-            this.label_senha.Text = "Senha:";
+            this.label_senha.Text = "Senha Master:";
             // 
             // btnEnviar
             // 
             this.btnEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviar.Location = new System.Drawing.Point(57, 179);
+            this.btnEnviar.Location = new System.Drawing.Point(55, 226);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(115, 37);
             this.btnEnviar.TabIndex = 2;
-            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.Text = "Entrar";
             this.btnEnviar.UseVisualStyleBackColor = true;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // txtLogin
             // 
             this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogin.Location = new System.Drawing.Point(21, 43);
+            this.txtLogin.Location = new System.Drawing.Point(19, 90);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(194, 26);
             this.txtLogin.TabIndex = 3;
@@ -107,7 +110,7 @@ namespace Atv02
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(21, 119);
+            this.txtSenha.Location = new System.Drawing.Point(19, 166);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(194, 26);
             this.txtSenha.TabIndex = 4;
@@ -115,15 +118,17 @@ namespace Atv02
             // dataGridView_BDs
             // 
             this.dataGridView_BDs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_BDs.Location = new System.Drawing.Point(27, 355);
+            this.dataGridView_BDs.Location = new System.Drawing.Point(27, 393);
             this.dataGridView_BDs.Name = "dataGridView_BDs";
             this.dataGridView_BDs.RowHeadersWidth = 51;
             this.dataGridView_BDs.Size = new System.Drawing.Size(240, 198);
             this.dataGridView_BDs.TabIndex = 5;
+            this.dataGridView_BDs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_BDs_CellContentClick);
+            this.dataGridView_BDs.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_BDs_MouseClick);
             // 
             // btnListarTabelas
             // 
-            this.btnListarTabelas.Location = new System.Drawing.Point(318, 315);
+            this.btnListarTabelas.Location = new System.Drawing.Point(318, 353);
             this.btnListarTabelas.Name = "btnListarTabelas";
             this.btnListarTabelas.Size = new System.Drawing.Size(124, 23);
             this.btnListarTabelas.TabIndex = 6;
@@ -134,7 +139,7 @@ namespace Atv02
             // dataGridView_Tabelas
             // 
             this.dataGridView_Tabelas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Tabelas.Location = new System.Drawing.Point(315, 107);
+            this.dataGridView_Tabelas.Location = new System.Drawing.Point(315, 145);
             this.dataGridView_Tabelas.Name = "dataGridView_Tabelas";
             this.dataGridView_Tabelas.RowHeadersWidth = 51;
             this.dataGridView_Tabelas.Size = new System.Drawing.Size(346, 202);
@@ -193,15 +198,17 @@ namespace Atv02
             // panel_Login
             // 
             this.panel_Login.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Login.Controls.Add(this.txtServidor);
+            this.panel_Login.Controls.Add(this.label1);
             this.panel_Login.Controls.Add(this.txtLogin);
             this.panel_Login.Controls.Add(this.label_senha);
             this.panel_Login.Controls.Add(this.btnEnviar);
             this.panel_Login.Controls.Add(this.txtSenha);
             this.panel_Login.Controls.Add(this.lable_login);
-            this.panel_Login.Location = new System.Drawing.Point(27, 107);
-            this.panel_Login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_Login.Location = new System.Drawing.Point(27, 77);
+            this.panel_Login.Margin = new System.Windows.Forms.Padding(2);
             this.panel_Login.Name = "panel_Login";
-            this.panel_Login.Size = new System.Drawing.Size(240, 230);
+            this.panel_Login.Size = new System.Drawing.Size(240, 298);
             this.panel_Login.TabIndex = 15;
             // 
             // panel_novoUsuario
@@ -213,8 +220,8 @@ namespace Atv02
             this.panel_novoUsuario.Controls.Add(this.btnUsuario);
             this.panel_novoUsuario.Controls.Add(this.txtSenhaUsuario);
             this.panel_novoUsuario.Controls.Add(this.txtLoginUsuario);
-            this.panel_novoUsuario.Location = new System.Drawing.Point(712, 107);
-            this.panel_novoUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_novoUsuario.Location = new System.Drawing.Point(712, 145);
+            this.panel_novoUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.panel_novoUsuario.Name = "panel_novoUsuario";
             this.panel_novoUsuario.Size = new System.Drawing.Size(256, 274);
             this.panel_novoUsuario.TabIndex = 16;
@@ -234,11 +241,58 @@ namespace Atv02
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.buttonGravarPermissoes);
-            this.panel3.Location = new System.Drawing.Point(712, 396);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(712, 434);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(256, 157);
             this.panel3.TabIndex = 17;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Location = new System.Drawing.Point(28, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 97);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Enabled = false;
+            this.radioButton3.Location = new System.Drawing.Point(7, 65);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(63, 17);
+            this.radioButton3.TabIndex = 18;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Revoke";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Enabled = false;
+            this.radioButton2.Location = new System.Drawing.Point(7, 42);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(50, 17);
+            this.radioButton2.TabIndex = 17;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Deny";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Enabled = false;
+            this.radioButton1.Location = new System.Drawing.Point(7, 19);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(51, 17);
+            this.radioButton1.TabIndex = 16;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Grant";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // buttonGravarPermissoes
             // 
@@ -266,69 +320,41 @@ namespace Atv02
             // dataGridView_Usuarios
             // 
             this.dataGridView_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Usuarios.Location = new System.Drawing.Point(318, 355);
+            this.dataGridView_Usuarios.Location = new System.Drawing.Point(318, 393);
             this.dataGridView_Usuarios.Name = "dataGridView_Usuarios";
             this.dataGridView_Usuarios.RowHeadersWidth = 51;
             this.dataGridView_Usuarios.Size = new System.Drawing.Size(346, 169);
             this.dataGridView_Usuarios.TabIndex = 19;
             this.dataGridView_Usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Enabled = false;
-            this.radioButton1.Location = new System.Drawing.Point(7, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(51, 17);
-            this.radioButton1.TabIndex = 16;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Grant";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(28, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 97);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Enabled = false;
-            this.radioButton2.Location = new System.Drawing.Point(7, 42);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(50, 17);
-            this.radioButton2.TabIndex = 17;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Deny";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Enabled = false;
-            this.radioButton3.Location = new System.Drawing.Point(7, 65);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(63, 17);
-            this.radioButton3.TabIndex = 18;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Revoke";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
             // buttonSelecionarUsuario
             // 
-            this.buttonSelecionarUsuario.Location = new System.Drawing.Point(540, 530);
+            this.buttonSelecionarUsuario.Location = new System.Drawing.Point(540, 568);
             this.buttonSelecionarUsuario.Name = "buttonSelecionarUsuario";
             this.buttonSelecionarUsuario.Size = new System.Drawing.Size(124, 23);
             this.buttonSelecionarUsuario.TabIndex = 20;
             this.buttonSelecionarUsuario.Text = "Selecionar Usuario";
             this.buttonSelecionarUsuario.UseVisualStyleBackColor = true;
             this.buttonSelecionarUsuario.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // txtServidor
+            // 
+            this.txtServidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtServidor.Location = new System.Drawing.Point(19, 23);
+            this.txtServidor.Name = "txtServidor";
+            this.txtServidor.Size = new System.Drawing.Size(194, 26);
+            this.txtServidor.TabIndex = 6;
+            this.txtServidor.Text = "localhost";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Servidor:";
             // 
             // Form1
             // 
@@ -353,9 +379,9 @@ namespace Atv02
             this.panel_novoUsuario.ResumeLayout(false);
             this.panel_novoUsuario.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Usuarios)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Usuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,6 +414,8 @@ namespace Atv02
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button buttonSelecionarUsuario;
+        private System.Windows.Forms.TextBox txtServidor;
+        private System.Windows.Forms.Label label1;
     }
 }
 

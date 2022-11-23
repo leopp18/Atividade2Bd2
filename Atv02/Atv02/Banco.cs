@@ -9,6 +9,7 @@ namespace Atv02
         private string user = "usuario";
         private string password = "senha1234";
         private string db = "";
+        private string dataSource = "";
         private string conec = "";
 
 
@@ -17,11 +18,12 @@ namespace Atv02
         public global::System.String User { get => user; set => user = value; }
         public global::System.String Password { get => password; set => password = value; }
         public string Db { get => db; set => db = value; }
+        public string DataSource { get => dataSource; set => dataSource = value; }
 
         private void conexao()
         {
-            conec = "Data Source=localhost;" +
-            "Initial Catalog=" + db + ";" + "User ID=" +
+            conec = "Data Source=" + dataSource +
+            ";Initial Catalog=" + db + ";" + "User ID=" +
             user + ";password =" +
             password + ";" +
             "Language=Portuguese";

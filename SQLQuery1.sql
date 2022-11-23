@@ -14,10 +14,10 @@ create table pessoas2
 	altura integer
 )
 
-create login usuario with password='senha1234';
-create user usuario from login usuario;
-exec sp_addrolemember 'DB_DATAREADER', 'usuario';
-exec sp_addrolemember 'DB_DATAWRITER', 'usuario';
+create login usuario2 with password='senha1234';
+create user usuario3 from login usuario2;
+exec sp_addrolemember 'DB_DATAREADER', 'usuario3';
+exec sp_addrolemember 'DB_DATAWRITER', 'usuario3';
 
 select database_id, name, create_date from sys.databases where database_id > 4;
 
@@ -35,3 +35,11 @@ else
 	begin
 		commit transaction;
 	end
+
+
+
+SELECT distinct p.name
+FROM sys.database_role_members roles
+	JOIN sys.database_principals p ON roles.member_principal_id = p.principal_id
+	JOIN sys.database_principals pp ON roles.role_principal_id = pp.principal_id
+ORDER BY 1
